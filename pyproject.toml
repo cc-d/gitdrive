@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+name = "gitdrive"
+version = "0.1.0"
+author = "Cary Carter"
+author_email = "ccarterdev@gmail.com"
+description = "A tool to use GitHub as a cloud storage service with encryption."
+long_description = file: README.md
+long_description_content_type = "text/markdown"
+url = "https://github.com/cc-d/gitdrive"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+packages = setuptools.find_packages()
+entry_points = {
+    "console_scripts": [
+        "gitdrive=gitdrive.cli:main",
+    ]
+}
+install_requires = [
+    "requests",
+]
+

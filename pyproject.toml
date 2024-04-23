@@ -7,22 +7,29 @@ name = "gitdrive"
 version = "0.1.0"
 author = "Cary Carter"
 author_email = "ccarterdev@gmail.com"
-description = "A tool to use GitHub as a cloud storage service with encryption."
-long_description = file: README.md
-long_description_content_type = "text/markdown"
+description = "A tool to use git repos (presumbly GitHub) as a cloud storage service with encryption."
+
 url = "https://github.com/cc-d/gitdrive"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
 ]
-packages = setuptools.find_packages()
-entry_points = {
-    "console_scripts": [
-        "gitdrive=gitdrive.cli:main",
-    ]
-}
+
 install_requires = [
     "requests",
 ]
 
+
+
+[tool.isort]
+profile = "black"
+use_parentheses = true
+line_length = 79
+
+[tool.black]
+line_length = 79
+skip_string_normalization = true
+skip_magic_trailing_comma = true
+preview = true
+target-version = ['py37']
